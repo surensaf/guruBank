@@ -13,13 +13,13 @@ public class Util {
     // Browser Name
     public static final String BROWSER_NAME = "firefox";
 
-    // Valid account for login
-    public static final String USER_NAME = "mngr131905";
-    public static final String PASSWD = "AjetEvU";
 
-
+    public static final String FILE_PATH = "/Users/suren/Projects/IdeaProjects/guruBank/src/main/resources/datasheets/TestData.xls"; // File Path
+    public static final String SHEET_NAME = "Data"; // Sheet name
+    public static final String TABLE_NAME = "testData"; // Name of data table
     // Expected output
     public static final String EXPECT_TITLE = "Guru99 Bank Manager HomePage";
+    public static final String EXPECT_ERROR = "User or Password is not valid";
 
 
 }
