@@ -10,7 +10,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
+/*
+    @author - Suren Safaryan
+    Class Used to Read From Excel File Template - 97-2007
+*/
 public class ReadExcel {
 
     public static String[][] getDataFromExcel(String xlFilePath,
@@ -55,7 +58,5 @@ public class ReadExcel {
 
         return (tabArray);
     }
-
-
 
 }

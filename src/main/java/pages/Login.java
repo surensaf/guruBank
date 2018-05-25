@@ -23,12 +23,25 @@ public class Login {
     WebElement loginButton;
 
     public Login(WebDriver driver){
+
         this.driver = driver;
     }
 
-    public void loginClient(String userId, String pass){
+    public void setUsername(String userId){
         username.sendKeys(userId);
+    }
+
+    public void setPassword(String pass){
         password.sendKeys(pass);
+    }
+
+    public void clickLogin(){
         loginButton.click();
+    }
+
+    public void loginClient(String userId, String pass){
+        this.setUsername(userId);
+        this.setPassword(pass);
+        this.clickLogin();
     }
 }

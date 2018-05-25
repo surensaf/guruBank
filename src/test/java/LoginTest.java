@@ -3,9 +3,8 @@ import helper.BrowserFactory;
 import helper.ReadExcel;
 import helper.Util;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,21 +12,22 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.Login;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
+import static test.methods.SampleMethod1.verify;
 
 public class LoginTest {
     static WebDriver driver; // Selenium control driver
 
     @DataProvider(name = "GuruTest")
     public Object[][] testData() throws Exception {
-        return ReadExcel.getDataFromExcel(Util.FILE_PATH, Util.SHEET_NAME,
+        return ReadExcel.getDataFromExcel(Util.DATA_FILE_PATH, Util.SHEET_NAME,
                 Util.TABLE_NAME);
     }
     @Test(dataProvider = "GuruTest")
     public void TestLogin(String username, String password) throws Exception {
-
 
         String actualTitle;
         String actualBoxMsg;
@@ -40,12 +40,14 @@ public class LoginTest {
             alt.accept();
             // Compare Error Text with Expected Error Value
             assertEquals(actualBoxMsg,Util.EXPECT_ERROR);
-
         }
         catch (NoAlertPresentException Ex){
             actualTitle = driver.getTitle();
             // On Successful login compare Actual Page Title with Expected Title
             assertEquals(actualTitle,Util.EXPECT_TITLE);
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            // Code to save screenshot at desired location
+            FileUtils.copyFile(scrFile, new File(Util.SCREENSHOT_PATH +"screenshot.png"));
         }
     }
 
