@@ -32,6 +32,7 @@ public class Login {
     }
 
     public void setPassword(String pass){
+
         password.sendKeys(pass);
     }
 

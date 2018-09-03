@@ -4,6 +4,7 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
+import jxl.write.WritableCellFormat;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +15,7 @@ import java.io.IOException;
     @author - Suren Safaryan
     Class Used to Read From Excel File Template - 97-2007
 */
-public class ReadExcel {
+public class Excel {
 
     public static String[][] getDataFromExcel(String xlFilePath,
                                               String sheetName, String tableName) throws Exception {

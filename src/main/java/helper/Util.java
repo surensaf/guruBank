@@ -8,6 +8,12 @@ public class Util {
     // Time to wait when searching for a GUI element
     public static final int WAIT_TIME = 5;
 
+    //Login/password
+
+    public static final String USERNAME_VALID = "mngr131905";
+    public static final String PASSWORD_VALID = "AjetEvU";
+
+
     // Browser Name
     public static final String BROWSER_NAME = "firefox";
 
@@ -17,7 +23,7 @@ public class Util {
     public static final String TABLE_NAME = "testData"; // Name of data table
     // Expected output
     public static final String EXPECT_TITLE = "Guru99 Bank Manager HomePage";
-    public static final String EXPECT_ERROR = "User or Password is not valida";
+    public static final String EXPECT_ERROR = "User or Password is not valid";
 
 
 }
